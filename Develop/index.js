@@ -1,7 +1,18 @@
 // TODO: Include packages needed for this application
+const inquirer = require('inquirer');
+const fs = require('fs');
+const util = require("util");
+const generateReadme = require("./utils/generateReadme")
+const writeFileAsync = util.promisify(fs.writeFile);
+
 
 // TODO: Create an array of questions for user input
 //description, installation instructions, usage information, contribution guidelines, and test instructions
+const promptUser = () =>
+inquirer.prompt([
+
+
+
 const questions = [];
     {
         type: "input",
