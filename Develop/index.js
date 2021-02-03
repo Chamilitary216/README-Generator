@@ -2,6 +2,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const util = require("util");
+const writeFileAsync = util.promisify(fs.writeFile);
 const generateReadme = require("./utils/generateMarkdown.js")
 
 
@@ -51,14 +52,14 @@ const questions = [
             name: "license",
             message: "Which licenses are used for this project?",
             choices: [
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
+                "Apache License",
+                "The MIT License",
+                "Eclipse 1.0 License",
+                "Artistic License",
+                "JET License",
+                "GNU",
+                "Other",
+                "None",
             ]
          
         },
@@ -78,35 +79,20 @@ const questions = [
     
 
 
-
-
-
-
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data, err => {
-        if 
-        (err) {
-            return console.log (err);
-        }
-        console.log("Read Me had been created.")
-    });
-}
-
-const writeFileAsync = util.promisify(writeToFile);
-
 // TODO: Create a function to initialize app
-function init() {
-    inquirer
-    .prompt (promptUser)
-    .then((response) => {
-        console.log(response)
-        const randomName = "README_${response.name.toLowerCase().split(' ').join('')}.md";
-        writeToFile(randomName, markDown(response))
+async function init () {
+    try {
+        const userAnswers = await inquirer.prompt(questions);
+        const generateContent = generateReadme(userAnswers);
+        // Write new README.md to dist directory
+        await writeFileAsync('./README.md', generateContent);
+        console.log("ReadMe Created");
+    } catch(err) {
+        console.log(err);
+    }
+        
+    }
 
-    })
-    
-}
 
 // Function call to initialize app
 init();

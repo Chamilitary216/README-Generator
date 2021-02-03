@@ -14,7 +14,7 @@ function renderLicenseSection(license) {}
 function generateMarkdown(data) {
   return `# ${data.title}
 
-  <h1 align = "center"> Description </h1> ${data.description}
+  <h1 align = "center"> Description </h1> ${data.projectName}
 
   ## Description
     ${data.description}
@@ -26,6 +26,8 @@ function generateMarkdown(data) {
   [Tests] (#test)
   [License] (#license)
   [Questions] (#questions)
+
+  ## Installation
 
 
 
