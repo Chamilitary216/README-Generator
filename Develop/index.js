@@ -36,7 +36,7 @@ const questions = [
         },
     
         {
-            type: "list",
+            type: "input",
             name: "contribution",
             message: "Who contributed to this project?",
         },
@@ -56,9 +56,7 @@ const questions = [
                 "The MIT License",
                 "Eclipse 1.0 License",
                 "Artistic License",
-                "JET License",
-                "GNU",
-                "Other",
+                "Boost",
                 "None",
             ]
          
@@ -85,7 +83,7 @@ async function init () {
         const userAnswers = await inquirer.prompt(questions);
         const generateContent = generateReadme(userAnswers);
         // Write new README.md to dist directory
-        await writeFileAsync('./README.md', generateContent);
+        await writeFileAsync('./READMEPseudo.md', generateContent);
         console.log("ReadMe Created");
     } catch(err) {
         console.log(err);
