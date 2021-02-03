@@ -1,8 +1,8 @@
 
 
-  <h1 align = "center"> Description  Readme Generator </h1>
+  <h1 align = "center"> Description  ReadMe Generator </h1>
 
-    Project used to create a ReadMe file
+    A ReadMe.md generator used to create ReadMe files
   <h2> Table of Contents: </h2>
   [Description] (#description)
   [Installation] (#installation)
@@ -13,19 +13,19 @@
   [Questions] (#questions)
 
   ## Installation
-  Type "npm i inquirer" in the terminal
+  In Terminal or Command Prompts enter "npm i inquirer" to install
 
   ## Usage
-  Use this project to create a quick and easy README. To focus less on Readme and more on coding.
+  This is used to create Read Me files quickly and easily, therefore you can focus more on coding!
 
   ## Contribution
   Christopher Curry
 
   ## Test
-  Not right now.
+  No
 
   ## License
-  undefined
+  
 
   ## Questions
   undefined

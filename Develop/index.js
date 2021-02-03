@@ -83,12 +83,12 @@ async function init () {
         const userAnswers = await inquirer.prompt(questions);
         const generateContent = generateReadme(userAnswers);
         // Write new README.md to dist directory
-        await writeFileAsync('./READMEPseudo.md', generateContent);
+        await writeFileAsync('./README.md', generateContent);
         console.log("ReadMe Created");
     } catch(err) {
         console.log(err);
     }
-        
+
     }
 
 
