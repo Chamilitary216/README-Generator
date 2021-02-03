@@ -1,6 +1,6 @@
 
 
-  <h1 align = "center"> Description  ReadMe Generator </h1>
+  <h1 align = "center"> ReadMe Generator </h1>
 
     A ReadMe.md generator used to create ReadMe files
   <h2> Table of Contents: </h2>
